@@ -55,4 +55,25 @@ public class EmployeesControllerTest {
                 .andExpect(jsonPath("$[0].puesto").value("Desarrollador"));
     }
 
+    @Test
+    public void whenCreateSomeEmployeesThenAreCreated() throws Exception {
+        //give
+        List<EmployeeRequestModel> employees = EmployeesUtilTest.buildSomeRequests();
+        String json = objectMapper.writeValueAsString(employees);
+        //when
+        mockMvc.perform(
+                post("/empleados/v1")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json))
+                //then
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.length()").value(4))
+                .andExpect(jsonPath("$[0].id").exists())
+                .andExpect(jsonPath("$[0].nombreCompleto").value("Nombre Empleado"))
+                .andExpect(jsonPath("$[0].apellidoPaterno").value("Apellido Paterno"))
+                .andExpect(jsonPath("$[0].sexo").value(Sexo.MASCULINO.name()))
+                .andExpect(jsonPath("$[0].fechaNacimiento").value("1990-01-01"))
+                .andExpect(jsonPath("$[0].puesto").value("Desarrollador"));
+    }
+
 }
