@@ -1,7 +1,7 @@
 package com.api.labs.empleados.controllers;
 
-import com.api.labs.empleados.dtos.EmpleadoRequestModel;
-import com.api.labs.empleados.dtos.EmpleadoResponseModel;
+import com.api.labs.empleados.dtos.EmployeeRequestModel;
+import com.api.labs.empleados.dtos.EmployeeResponseModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,14 +13,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/empleados/v1")
-public class EmpleadosController {
+public class EmployeesController {
 
 
     @PostMapping
-    public ResponseEntity<List<EmpleadoResponseModel>> createEmpleado(@RequestBody List<EmpleadoRequestModel> empleados) {
+    public ResponseEntity<List<EmployeeResponseModel>> createEmpleado(@RequestBody List<EmployeeRequestModel> empleados) {
         return ResponseEntity.created(URI.create("/empleados/v1")).body(
                 List.of(
-                        EmpleadoResponseModel
+                        EmployeeResponseModel
                                 .builder()
                                 .id(1)
                                 .nombreCompleto(empleados.get(0).getPrimerNombre() + " " + empleados.get(0).getSegundoNombre())

@@ -1,18 +1,16 @@
 package com.api.labs.empleados.controllers;
 
-import com.api.labs.empleados.domains.EmpleadosDomain;
-import com.api.labs.empleados.models.EmpleadoRequestModel;
+import com.api.labs.empleados.domains.EmployeesDomain;
+import com.api.labs.empleados.models.EmployeeRequestModel;
 import com.api.labs.empleados.models.enums.Sexo;
-import com.api.labs.empleados.utilities.EmpleadosUtilTest;
+import com.api.labs.empleados.utilities.EmployeesUtilTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -23,9 +21,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(controllers = EmpleadosController.class)
+@WebMvcTest(controllers = EmployeesController.class)
 @ExtendWith(MockitoExtension.class)
-public class EmpleadosControllerTest {
+public class EmployeesControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -34,15 +32,14 @@ public class EmpleadosControllerTest {
     private ObjectMapper objectMapper;
 
     @Mock
-    private EmpleadosDomain empleadosDomain;
+    private EmployeesDomain employeesDomain;
 
 
     @Test
-    public void whenCreateAnEmployerThenIsCreated() throws Exception {
+    public void whenCreateAnEmployeeThenIsCreated() throws Exception {
         //give
-        EmpleadoRequestModel empleado = EmpleadosUtilTest.buildOneRequest();
-        String json = objectMapper.writeValueAsString(List.of(empleado));
-        System.out.println(json);
+        List<EmployeeRequestModel> employees = EmployeesUtilTest.buildOneRequests();
+        String json = objectMapper.writeValueAsString(employees);
         //when
         mockMvc.perform(
                 post("/empleados/v1")

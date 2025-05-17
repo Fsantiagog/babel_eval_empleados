@@ -12,14 +12,12 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmpleadoRequestModel implements Serializable {
-    private String primerNombre;
-    private String segundoNombre;
+public class EmployeeResponseModel implements Serializable {
+    private Integer id;
+    private String nombreCompleto;
     private String apellidoPaterno;
-    private String apellidoMaterno;
     private Sexo sexo;
     private String fechaNacimiento;
-    private Integer edad;
     private String puesto;
 
 }
