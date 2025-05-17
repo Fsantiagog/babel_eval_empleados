@@ -19,17 +19,16 @@ public class EmployeesController {
     @PostMapping
     public ResponseEntity<List<EmployeeResponseModel>> createEmpleado(@RequestBody List<EmployeeRequestModel> empleados) {
         return ResponseEntity.created(URI.create("/empleados/v1")).body(
-                List.of(
-                        EmployeeResponseModel
-                                .builder()
+                empleados.stream()
+                        .map(empleado -> EmployeeResponseModel.builder()
                                 .id(1)
-                                .nombreCompleto(empleados.get(0).getPrimerNombre() + " " + empleados.get(0).getSegundoNombre())
-                                .apellidoPaterno(empleados.get(0).getApellidoPaterno())
-                                .sexo(empleados.get(0).getSexo())
-                                .fechaNacimiento(empleados.get(0).getFechaNacimiento())
-                                .puesto(empleados.get(0).getPuesto())
-                                .build()
-                )
+                                .nombreCompleto(empleado.getPrimerNombre() + " " + empleado.getSegundoNombre())
+                                .apellidoPaterno(empleado.getApellidoPaterno())
+                                .sexo(empleado.getSexo())
+                                .fechaNacimiento(empleado.getFechaNacimiento())
+                                .puesto(empleado.getPuesto())
+                                .build())
+                        .toList()
         );
     }
 }
