@@ -13,9 +13,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmployeeResponseModel implements Serializable {
-    private Integer id;
+    private Long id;
     private String nombreCompleto;
     private String apellidoPaterno;
+    private String apellidoMaterno;
     private Sexo sexo;
     private String fechaNacimiento;
     private String puesto;

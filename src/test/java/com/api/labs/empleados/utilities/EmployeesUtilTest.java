@@ -2,7 +2,6 @@ package com.api.labs.empleados.utilities;
 
 
 import com.api.labs.empleados.models.EmployeeRequestModel;
-import com.api.labs.empleados.models.enums.Sexo;
 
 import java.util.Arrays;
 import java.util.Collections;
