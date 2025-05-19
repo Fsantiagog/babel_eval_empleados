@@ -10,16 +10,6 @@ import java.util.function.Function;
 public final class ApiUtilities {
     private ApiUtilities() {}
 
-    public static <T> Response<T> buildBadResponse(String message) {
-        return BadResponse
-                .<T>builder()
-                .success(false)
-                .message(message)
-                .timestamp(String.valueOf(System.currentTimeMillis()))
-                .build();
-    }
-
-
     public static <T> Function<T, Response<T>> buildSuccessResponse(String message) {
         return foundData -> Response
                 .<T>builder()

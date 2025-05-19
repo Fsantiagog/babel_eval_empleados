@@ -93,8 +93,7 @@ public class EmployeesControllerTest {
     @Test
     public void whenCreateAnEmployeeThenIsBadRequest() throws Exception {
         //give
-        List<EmployeeRequestModel> employees = EmployeesUtilTest.buildOneBadRequests();
-        String json = objectMapper.writeValueAsString(employees);
+        String json = "[{'Puesto':'BadRequest'}]";
         //when
         Mockito
                 .when(employeesDomain.createEmployees(Mockito.anyList()))

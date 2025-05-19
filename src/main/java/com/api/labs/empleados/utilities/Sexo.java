@@ -10,11 +10,4 @@ public enum Sexo {
     FEMENINO,
     SIN_ESPECIFICAR;
 
-    public static Sexo fromValue(String value) {
-        return Stream
-                .of(values())
-                .filter(v -> v.name().equalsIgnoreCase(value))
-                .findFirst()
-                .orElse(SIN_ESPECIFICAR);
-    }
 }

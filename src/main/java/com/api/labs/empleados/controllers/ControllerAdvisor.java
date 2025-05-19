@@ -26,7 +26,7 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex, WebRequest request) {
-        log.info("Handling MethodArgumentNotValidException");
+        log.info("Handling handleConstraintViolationException");
         return ResponseEntity.badRequest().body(
                 BadResponse
                         .builder()
