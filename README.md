@@ -52,13 +52,19 @@ mvn clean package -DskipTests
 docker build -t empleados-api .
 ```
 
-### 4. Ejecuta el contenedor
+### 4. Crea la base de datos
+
+```bash
+ocker run --name postgres -e POSTGRES_PASSWORD=1q2w3e4r -d -p 5432:5432 postgres
+```
+
+### 5. Ejecuta el contenedor
 
 ```bash
 docker run -p 8080:8080 empleados-api
 ```
 
-### 5. Contrato
+### 6. Contrato
 
 ```bash
 http://localhost:8080/swagger-ui.html
