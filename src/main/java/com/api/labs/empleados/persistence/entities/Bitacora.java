@@ -1,6 +1,6 @@
 package com.api.labs.empleados.persistence.entities;
 
-import com.api.labs.empleados.utilities.Accion;
+import com.api.labs.empleados.persistence.catalogs.Accion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

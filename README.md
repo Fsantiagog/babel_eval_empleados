@@ -55,13 +55,17 @@ docker build -t empleados-api .
 ### 4. Crea la base de datos
 
 ```bash
-ocker run --name postgres -e POSTGRES_PASSWORD=1q2w3e4r -d -p 5432:5432 postgres
+docker run --name postgres -e POSTGRES_PASSWORD=1q2w3e4r -d -p 5432:5432 -h empleados postgres
+docker exec -it postgres psql -U postgres
+CREATE DATABASE empleados;
+\c empleados
+CREATE SCHEMA empleados;
 ```
 
 ### 5. Ejecuta el contenedor
 
 ```bash
-docker run -p 8080:8080 empleados-api
+docker run -p 8080:8080 -e logpah=/app/logs -h empleados empleados-api
 ```
 
 ### 6. Contrato

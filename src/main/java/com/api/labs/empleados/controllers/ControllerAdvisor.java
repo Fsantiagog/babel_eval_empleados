@@ -16,8 +16,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-//DRY
-
 @Log4j2
 @SuppressWarnings({"unchecked", "rawtypes"})
 @ControllerAdvice(basePackages = "com.api.labs.empleados.controllers")

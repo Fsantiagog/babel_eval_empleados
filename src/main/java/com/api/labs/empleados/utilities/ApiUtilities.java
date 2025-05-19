@@ -1,7 +1,5 @@
 package com.api.labs.empleados.utilities;
 
-import com.api.labs.empleados.dtos.EmployeeResponseModel;
-import com.api.labs.empleados.dtos.response.BadResponse;
 import com.api.labs.empleados.dtos.response.Response;
 
 import java.util.List;

@@ -1,8 +1,6 @@
-package com.api.labs.empleados.utilities;
+package com.api.labs.empleados.persistence.catalogs;
 
 import lombok.Getter;
-
-import java.util.stream.Stream;
 
 @Getter
 public enum Sexo {

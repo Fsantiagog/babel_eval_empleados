@@ -1,6 +1,6 @@
 package com.api.labs.empleados.dtos;
 
-import com.api.labs.empleados.utilities.Sexo;;
+import com.api.labs.empleados.persistence.catalogs.Sexo;;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
 

@@ -1,6 +1,5 @@
 package com.api.labs.empleados.utilities;
 
-import com.api.labs.empleados.dtos.EmployeeRequestModel;
 import com.api.labs.empleados.dtos.EmployeeUpdateRequestModel;
 import com.api.labs.empleados.persistence.entities.Employee;
 import lombok.experimental.UtilityClass;

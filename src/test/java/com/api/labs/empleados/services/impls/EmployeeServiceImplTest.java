@@ -3,7 +3,6 @@ package com.api.labs.empleados.services.impls;
 import com.api.labs.empleados.persistence.entities.Employee;
 import com.api.labs.empleados.persistence.repositories.EmployeeRepository;
 import com.api.labs.empleados.services.EmployeeService;
-import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;

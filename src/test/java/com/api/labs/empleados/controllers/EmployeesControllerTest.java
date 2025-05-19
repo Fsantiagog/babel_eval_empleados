@@ -3,7 +3,7 @@ package com.api.labs.empleados.controllers;
 import com.api.labs.empleados.domains.EmployeesDomain;
 import com.api.labs.empleados.dtos.EmployeeRequestModel;
 import com.api.labs.empleados.utilities.EmployeesUtilTest;
-import com.api.labs.empleados.utilities.Sexo;
+import com.api.labs.empleados.persistence.catalogs.Sexo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

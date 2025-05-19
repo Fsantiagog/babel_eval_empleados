@@ -3,6 +3,7 @@ package com.api.labs.empleados.utilities;
 
 import com.api.labs.empleados.dtos.EmployeeRequestModel;
 import com.api.labs.empleados.dtos.EmployeeResponseModel;
+import com.api.labs.empleados.persistence.catalogs.Sexo;
 import com.api.labs.empleados.persistence.entities.Employee;
 
 import java.time.LocalDate;

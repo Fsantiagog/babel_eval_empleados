@@ -3,7 +3,7 @@ package com.api.labs.empleados.domains.impls;
 import com.api.labs.empleados.domains.BitacoraDomain;
 import com.api.labs.empleados.persistence.entities.Bitacora;
 import com.api.labs.empleados.services.BitacoraService;
-import com.api.labs.empleados.utilities.Accion;
+import com.api.labs.empleados.persistence.catalogs.Accion;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

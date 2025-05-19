@@ -5,16 +5,13 @@ import com.api.labs.empleados.dtos.EmployeeRequestModel;
 import com.api.labs.empleados.dtos.EmployeeResponseModel;
 import com.api.labs.empleados.dtos.EmployeeUpdateRequestModel;
 import com.api.labs.empleados.mappers.EmployeeMapper;
-import com.api.labs.empleados.persistence.entities.Employee;
 import com.api.labs.empleados.services.EmployeeService;
-import com.api.labs.empleados.utilities.DateTimes;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
 
 import static com.api.labs.empleados.utilities.Employees.copyOf;
 

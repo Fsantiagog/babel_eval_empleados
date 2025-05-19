@@ -1,5 +1,6 @@
 package com.api.labs.empleados.utilities;
 
+import com.api.labs.empleados.persistence.catalogs.Accion;
 import com.api.labs.empleados.persistence.entities.Bitacora;
 
 import java.time.LocalDateTime;

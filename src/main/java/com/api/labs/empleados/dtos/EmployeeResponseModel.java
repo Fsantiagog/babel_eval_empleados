@@ -1,6 +1,6 @@
 package com.api.labs.empleados.dtos;
 
-import com.api.labs.empleados.utilities.Sexo;
+import com.api.labs.empleados.persistence.catalogs.Sexo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

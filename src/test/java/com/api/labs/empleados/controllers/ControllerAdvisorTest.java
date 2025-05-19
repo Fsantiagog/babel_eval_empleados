@@ -1,14 +1,10 @@
 package com.api.labs.empleados.controllers;
 
 import com.api.labs.empleados.domains.EmployeesDomain;
-import com.api.labs.empleados.dtos.EmployeeRequestModel;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.validation.ConstraintViolationException;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;

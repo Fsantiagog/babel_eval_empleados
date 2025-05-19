@@ -1,4 +1,4 @@
-package com.api.labs.empleados.utilities;
+package com.api.labs.empleados.persistence.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

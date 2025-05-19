@@ -1,12 +1,9 @@
 package com.api.labs.empleados.services.impls;
 
 import com.api.labs.empleados.persistence.entities.Bitacora;
-import com.api.labs.empleados.persistence.entities.Employee;
 import com.api.labs.empleados.persistence.repositories.BitacoraRepository;
-import com.api.labs.empleados.persistence.repositories.EmployeeRepository;
 import com.api.labs.empleados.services.BitacoraService;
-import com.api.labs.empleados.services.EmployeeService;
-import com.api.labs.empleados.utilities.Accion;
+import com.api.labs.empleados.persistence.catalogs.Accion;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +15,6 @@ import java.util.Optional;
 
 import static com.api.labs.empleados.utilities.BitacoraUtils.buildBitacora;
 import static com.api.labs.empleados.utilities.BitacoraUtils.buildSomeBitacoras;
-import static com.api.labs.empleados.utilities.EmployeesUtilTest.buildEmployee;
-import static com.api.labs.empleados.utilities.EmployeesUtilTest.buildSomeEmployees;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
