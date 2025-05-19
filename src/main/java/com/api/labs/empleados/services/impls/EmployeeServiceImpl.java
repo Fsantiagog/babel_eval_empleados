@@ -3,6 +3,7 @@ package com.api.labs.empleados.services.impls;
 import com.api.labs.empleados.persistence.entities.Employee;
 import com.api.labs.empleados.persistence.repositories.EmployeeRepository;
 import com.api.labs.empleados.services.EmployeeService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -56,6 +57,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void deleteById(Long id) {
         try {
+            employeeRepository
+                    .findById(id)
+                    .orElseThrow(() -> new EntityNotFoundException("Error deleting employee with id: " + id));
             employeeRepository.deleteById(id);
         } catch (Exception e) {
             log.error("Error deleting employee: {}", e.getMessage());

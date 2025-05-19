@@ -8,6 +8,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
+import java.util.Optional;
+
 @Mapper(componentModel = "spring", uses = {DateTimes.class})
 public interface EmployeeMapper {
 
@@ -17,7 +19,7 @@ public interface EmployeeMapper {
     @Mapping(source = "apellidoPaterno", target = "apellidoPaterno")
     @Mapping(source = "apellidoMaterno", target = "apellidoMaterno")
     @Mapping(source = "sexo", target = "sexo")
-    @Mapping(source = "fechaNacimiento", target = "fechaNacimiento", qualifiedByName = "toLocalDateTime")
+    @Mapping(source = "fechaNacimiento", target = "fechaNacimiento", qualifiedByName = "toLocalDate")
     @Mapping(source = "fechaNacimiento", target = "edad", qualifiedByName = "calculateAge")
     @Mapping(source = "puesto", target = "puesto")
     Employee toEmployee(EmployeeRequestModel employeeRequestModel);
@@ -27,12 +29,12 @@ public interface EmployeeMapper {
     @Mapping(source = "apellidoPaterno", target = "apellidoPaterno")
     @Mapping(source = "apellidoMaterno", target = "apellidoMaterno")
     @Mapping(source = "sexo", target = "sexo")
-    @Mapping(source = "fechaNacimiento", target = "fechaNacimiento", qualifiedByName = "toString")
+    @Mapping(source = "fechaNacimiento", target = "fechaNacimiento", qualifiedByName = "localDateToString")
     @Mapping(source = "puesto", target = "puesto")
     EmployeeResponseModel toEmployeeResponseModel(Employee employee);
 
     @Named("buildFullName")
     default String buildFullName(Employee employee) {
-        return String.format("%s %s", employee.getPrimerNombre(), employee.getSegundoNombre());
+        return String.format("%s %s", employee.getPrimerNombre(), Optional.ofNullable(employee.getSegundoNombre()).orElseGet(() -> "")).trim();
     }
 }

@@ -13,6 +13,5 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BadResponse<T> extends Response<T> {
     private String errorCode;
-    private List<String> errors;
-    private String uri;
+    private List<ArgumentHandlerError> errors;
 }

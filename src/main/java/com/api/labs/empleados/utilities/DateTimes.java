@@ -6,6 +6,7 @@ import org.mapstruct.Named;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 @UtilityClass
 public class DateTimes {
@@ -15,16 +16,21 @@ public class DateTimes {
         return LocalDateTime.parse(date);
     }
 
+    @Named("toLocalDate")
+    public static LocalDate toLocalDate(String date) {
+        return LocalDate.parse(date, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+    }
+
     @Named("calculateAge")
     public static Integer calculateAge(String fechaNacimiento) {
-        LocalDate birthDate = toLocalDateTime(fechaNacimiento).toLocalDate();
+        LocalDate birthDate = toLocalDate(fechaNacimiento);
         LocalDate now = LocalDateTime.now().toLocalDate();
         return Period.between(birthDate, now).getYears();
     }
 
-    @Named("toString")
-    public static String toString(LocalDateTime date) {
-        return date.toString();
+    @Named("localDateToString")
+    public static String localDateToString(LocalDate date) {
+        return date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 
 }

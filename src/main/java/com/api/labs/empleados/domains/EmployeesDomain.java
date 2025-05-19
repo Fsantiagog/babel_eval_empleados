@@ -2,18 +2,19 @@ package com.api.labs.empleados.domains;
 
 import com.api.labs.empleados.dtos.EmployeeRequestModel;
 import com.api.labs.empleados.dtos.EmployeeResponseModel;
+import com.api.labs.empleados.dtos.EmployeeUpdateRequestModel;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface EmployeesDomain {
-    List<EmployeeResponseModel> createEmployeers(List<EmployeeRequestModel> employeers);
+    List<EmployeeResponseModel> createEmployees(List<EmployeeRequestModel> employees);
 
-    Optional<EmployeeResponseModel> update(Long id, EmployeeRequestModel empleado);
+    Optional<EmployeeResponseModel> updateById(Long id, EmployeeUpdateRequestModel empleado);
 
     List<EmployeeResponseModel> findAll();
 
     Optional<EmployeeResponseModel> findById(Long id);
 
-    Optional<EmployeeResponseModel> deleteById(Long id);
+    void deleteById(Long id);
 }

@@ -8,6 +8,8 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Response<T> {
+    private String method;
+    private String uri;
     private String message;
     private T data;
     private Boolean success;
