@@ -22,6 +22,7 @@ public class BitacoraServiceImpl implements BitacoraService {
     @Transactional
     @Override
     public Bitacora save(Bitacora bitacora) {
+        log.info("guardando bitacora");
         try {
             return bitacoraRepository.save(bitacora);
         } catch (RuntimeException e) {
@@ -33,25 +34,28 @@ public class BitacoraServiceImpl implements BitacoraService {
     @Transactional(readOnly = true)
     @Override
     public Optional<Bitacora> findById(Long id) {
+        log.info("consultando bitacora");
         return bitacoraRepository.findById(id);
     }
 
     @Transactional(readOnly = true)
     @Override
     public List<Bitacora> findAll() {
+        log.info("consultando bitacora");
         return bitacoraRepository.findAll();
     }
 
     @Transactional
     @Override
     public void deleteById(Long id) {
+        log.info("eliminando bitacora");
         try {
             bitacoraRepository.findById(id)
-                    .orElseThrow(() -> new EntityNotFoundException("Bitacora no encontrado"));
+                    .orElseThrow(() -> new EntityNotFoundException("Bitacora no encontrada"));
             bitacoraRepository.deleteById(id);
         } catch (RuntimeException e) {
             log.error(e.getMessage());
-            throw new EntityNotFoundException("Bitacora no encontrado");
+            throw new EntityNotFoundException("Bitacora no encontrada");
         }
     }
 }

@@ -12,6 +12,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static com.api.labs.empleados.constants.EmployeeConstants.*;
+import static com.api.labs.empleados.constants.EmployeeConstants.FECHA_NACIMIENTO;
+
 public final class EmployeesUtilTest {
 
     private EmployeesUtilTest() {}
@@ -32,17 +35,17 @@ public final class EmployeesUtilTest {
         return EmployeeRequestModel.builder()
                 .primerNombre("Nombre")
                 .segundoNombre("Empleado")
-                .apellidoPaterno("ApellidoPaterno")
+                .apellidoPaterno(APPELLIDO_PATERNO)
                 .apellidoMaterno("ApellidoMaterno")
                 .sexo(Sexo.MASCULINO)
-                .fechaNacimiento("01-01-2000")
-                .puesto("Desarrollador")
+                .fechaNacimiento(FECHA_NACIMIENTO)
+                .puesto(PUESTO)
                 .build();
     }
 
     public static EmployeeRequestModel buildBadRequest() {
         return EmployeeRequestModel.builder()
-                .puesto("Desarrollador")
+                .puesto(PUESTO)
                 .build();
     }
 
@@ -50,11 +53,11 @@ public final class EmployeesUtilTest {
         return EmployeeResponseModel
                 .builder()
                 .id(1L)
-                .nombreCompleto("Nombre Empleado")
-                .apellidoPaterno("ApellidoPaterno")
+                .nombreCompleto(NOMBRE_COMPLETO)
+                .apellidoPaterno(APPELLIDO_PATERNO)
                 .sexo(Sexo.MASCULINO)
-                .fechaNacimiento("01-01-2000")
-                .puesto("Desarrollador")
+                .fechaNacimiento(FECHA_NACIMIENTO)
+                .puesto(PUESTO)
                 .build();
     }
 
@@ -62,10 +65,10 @@ public final class EmployeesUtilTest {
         return EmployeeResponseModel
                 .builder()
                 .id(1L)
-                .nombreCompleto("Nombre Empleado")
-                .apellidoPaterno("ApellidoPaterno")
+                .nombreCompleto(NOMBRE_COMPLETO)
+                .apellidoPaterno(APPELLIDO_PATERNO)
                 .sexo(Sexo.MASCULINO)
-                .fechaNacimiento("01-01-2000")
+                .fechaNacimiento(FECHA_NACIMIENTO)
                 .puesto("Nuevo Puesto")
                 .build();
     }
@@ -76,11 +79,11 @@ public final class EmployeesUtilTest {
                 .id(1L)
                 .primerNombre("Nombre")
                 .segundoNombre("Empleado")
-                .apellidoPaterno("ApellidoPaterno")
-                .apellidoMaterno("ApellidoPaterno")
+                .apellidoPaterno(APPELLIDO_PATERNO)
+                .apellidoMaterno(APPELLIDO_PATERNO)
                 .sexo(Sexo.MASCULINO)
-                .fechaNacimiento(LocalDate.parse("01-01-2000", DateTimeFormatter.ofPattern("dd-MM-yyyy")))
-                .puesto("Desarrollador")
+                .fechaNacimiento(LocalDate.parse(FECHA_NACIMIENTO, DateTimeFormatter.ofPattern(DateTimes.DATE_FORMAT)))
+                .puesto(PUESTO)
                 .build();
     }
 

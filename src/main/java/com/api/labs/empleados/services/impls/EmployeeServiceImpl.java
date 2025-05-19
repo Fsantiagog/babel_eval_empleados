@@ -22,6 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Transactional
     @Override
     public Employee save(Employee employee) {
+        log.info("Guardando el empleado");
         try {
             return employeeRepository.save(employee);
         } catch (Exception e) {
@@ -33,6 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Transactional
     @Override
     public List<Employee> saveAll(List<Employee> employee) {
+        log.info("Guardando los empleados");
         try {
             return employeeRepository.saveAll(employee);
         } catch (Exception e) {
@@ -44,18 +46,21 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Transactional(readOnly = true)
     @Override
     public Optional<Employee> findById(Long id) {
+        log.info("buscando por id el empleado");
         return employeeRepository.findById(id);
     }
 
     @Transactional(readOnly = true)
     @Override
     public List<Employee> findAll() {
+        log.info("buscando todos los empleados");
         return employeeRepository.findAll();
     }
 
     @Transactional
     @Override
     public void deleteById(Long id) {
+        log.info("eliminando por id el empleado");
         try {
             employeeRepository
                     .findById(id)

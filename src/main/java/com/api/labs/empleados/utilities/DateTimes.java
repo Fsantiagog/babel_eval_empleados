@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 
 @UtilityClass
 public class DateTimes {
+    public static final String DATE_FORMAT = "dd-MM-yyyy";
 
     @Named("toLocalDateTime")
     public static LocalDateTime toLocalDateTime(String date) {
@@ -18,7 +19,7 @@ public class DateTimes {
 
     @Named("toLocalDate")
     public static LocalDate toLocalDate(String date) {
-        return LocalDate.parse(date, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        return LocalDate.parse(date, DateTimeFormatter.ofPattern(DATE_FORMAT));
     }
 
     @Named("calculateAge")
